@@ -1,0 +1,29 @@
+name: Scrape Table Sums
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: # This allows you to run it manually
+
+jobs:
+  scrape-and-sum:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps chromium
+
+      # THIS STEP CONTAINS YOUR REQUIRED EMAIL ADDRESS
+      - name: Run scraper by 24f1002840@ds.study.iitm.ac.in
+        run: node scraper.js
