@@ -1,0 +1,9 @@
+{
+  "name": "playwright-scraper",
+  "version": "1.0.0",
+  "description": "Scraping assignment",
+  "main": "scraper.js",
+  "dependencies": {
+    "playwright": "^1.42.0"
+  }
+}
